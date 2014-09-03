@@ -8,6 +8,3 @@ ln -s ~/Dropbox/Apps/PopClip ~/Library/Application\ Support/PopClip
 # Homebrew services control panel
 brew tap jimbojsb/launchrocket
 brew cask install launchrocket
-
-# Skip last login info output, makes shell to start a bit faster
-touch $HOME/.hushlogin

@@ -40,8 +40,6 @@ install_homebrew () {
 	else
 		info "Homebrew is already installed. Moving on.\n"
 	fi
-    brew tap phinze/cask
-    brew install brew-cask
 }
 
 install_git () {

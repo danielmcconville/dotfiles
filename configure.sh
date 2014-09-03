@@ -140,6 +140,20 @@ install_homebrew_packages_from_file () {
   done < $1
 }
 
+install_homebrew_cask_packages_from_file () {
+  brew tap caskroom/cask
+  brew install brew-cask
+  while read line;
+  do
+    if [ $(brew list | grep -E "^$line$") == $line ]
+    then
+      info "$line is already installed. Skipping.\n"
+    else 
+      brew cask install $line
+    fi
+  done < $1
+}
+
 install_homebrew_packages () {
   # Update brew definitions
   info "Updating Homebrew formulas. Stay calm...\n"
@@ -148,6 +162,10 @@ install_homebrew_packages () {
   for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.brew`
   do
     install_homebrew_packages_from_file $source
+  done
+  for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.cask`
+  do
+    install_homebrew_cask_packages_from_file $source
   done
   # Upgrade existing packages 
   info "Upgrading installed packages...\n"
@@ -166,9 +184,6 @@ if [ ! -d "$dest" ]; then
  add_to_path $dest
 fi
 
-# Copy passwords file from external location
-cp ~/Dropbox/Config/xenocid_pwd.sh ~/.xenocid_pwd.sh
-
 # Symlink folders
 symlink_folders
 
@@ -181,6 +196,4 @@ install_homebrew_packages
 # Run topic configure scripts
 run_topic_configure
 
-# Source this to establish private environment variables
-source ~/.xenocid_pwd.sh
 

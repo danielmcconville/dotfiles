@@ -51,7 +51,6 @@ NeoBundleLazy 'tacroe/unite-mark', {'autoload':{'unite_sources':'mark'}}
 
 " General Bundles
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundleLazy 'gregsexton/gitv', {'depends':['tpope/vim-fugitive'],
             \ 'autoload':{'commands':'Gitv'}}
@@ -65,7 +64,6 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'vim-scripts/utl.vim'
 NeoBundle 'delimitMate.vim'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'rizzatti/dash.vim'
 " Smart and fast date changer
 NeoBundle 'tpope/vim-speeddating'
 " to surround vim objects with a pair of identical chars
@@ -157,9 +155,6 @@ NeoBundleLazy 'thoughtbot/vim-rspec', {'autoload': { 'filetypes': ['ruby']}}
 NeoBundleLazy 't9md/vim-ruby-xmpfilter', {'autoload': { 'filetypes': ['ruby']}}
 NeoBundleLazy 'ecomba/vim-ruby-refactoring', {'autoload': { 'filetypes': ['ruby']}}
 NeoBundleLazy 'tpope/vim-dispatch', {'autoload': { 'filetypes': ['ruby']}}
-
-" Scala
-NeoBundleLazy 'derekwyatt/vim-scala', {'autoload': { 'filetypes': ['scala']}}
 
 " Colorschemes {{{
 
